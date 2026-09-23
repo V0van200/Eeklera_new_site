@@ -1,0 +1,34 @@
+/* Scroll-driven spatial gallery. Falls back to the existing grid without JS. */
+.cinema-canvas, .cinema-hud, .cinema-progress, .cinema-grain { display: none; }
+@media (min-width: 1101px) and (hover: hover) and (pointer: fine) {
+  body[data-section='home'] .motion-toggle { position: fixed; right: 24px; bottom: 22px; z-index: 60; background: #151518; }
+  .worlds.is-cinema { height: 470vh; padding: 0; position: relative; }
+  .is-cinema .worlds__viewport { position: sticky; top: 0; height: 100vh; overflow: hidden; isolation: isolate; background: #08080a; perspective: 1100px; }
+  .is-cinema .cinema-canvas { display: block; position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; }
+  .is-cinema .cinema-grain { display: block; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 50% 45%, transparent 20%, #08080a 90%); z-index: -1; }
+  .is-cinema .worlds__heading { position: absolute; z-index: 5; inset: 32px 0 auto; margin-bottom: 0; pointer-events: none; }
+  .is-cinema .worlds__heading h2 { font-size: 1.15rem; }
+  .is-cinema .direction-grid { position: absolute; inset: 0; display: block; transform-style: preserve-3d; }
+  .is-cinema .direction-card { position: absolute; left: 50%; top: 50%; width: min(72vw,1080px); height: min(66vh,660px); min-height: 0; padding: 0; overflow: visible; border: 0; background: transparent; transform-origin: center; will-change: transform, opacity; }
+  .is-cinema .direction-card::before { display: none; }
+  .is-cinema .direction-card::after { left: 48%; right: 0; background: linear-gradient(0deg, #08080a 0%, transparent 34%); }
+  .is-cinema .direction-card__image { inset: 0 0 0 auto; width: 48%; height: 100%; object-position: center 25%; border: 1px solid #55555b; box-shadow: 0 30px 100px #000; transform: none !important; }
+  .is-cinema .direction-card > .eyebrow { position: absolute; top: 9%; left: 0; padding: 0; background: transparent; color: var(--accent); }
+  .is-cinema .direction-card > div { position: absolute; top: 30%; left: 0; z-index: 2; width: 65%; }
+  .is-cinema .direction-card__title { font-size: clamp(4rem,8.5vw,8rem); letter-spacing: -.025em; text-shadow: 0 5px 40px #000; white-space: nowrap; }
+  .is-cinema .direction-card__text { font-size: .9rem; padding: 0; margin-top: 26px; text-shadow: 0 2px 15px #000; }
+  .is-cinema .direction-card .icon-button { position: static; margin-top: 28px; width: 60px; height: 60px; background: #0b0b0c; }
+  .is-cinema .direction-card:hover .icon-button { background: var(--accent); color: #08080a; }
+  .is-cinema .direction-card:focus-visible { outline-offset: 12px; }
+  .is-cinema .cinema-hud { display: flex; position: absolute; z-index: 10; bottom: 38px; left: var(--gutter); right: var(--gutter); align-items: center; justify-content: space-between; gap: 24px; }
+  .cinema-hud > a { font-size: .75rem; margin-right: 160px; }
+  .cinema-chapters { display: flex; gap: 12px; }
+  .cinema-chapters button { width: 44px; height: 44px; border: 1px solid #555; border-radius: 50%; background: #0b0b0c; font-size: .7rem; }
+  .cinema-chapters button[aria-current='step'] { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .is-cinema .cinema-progress { display: block; position: absolute; bottom: 0; height: 2px; background: #29292e; width: 100%; }
+  .cinema-progress span { display: block; height: 100%; background: var(--scene-color,#5fd0f0); transform: scaleX(var(--scene-progress,0)); transform-origin: left; }
+}
+
+
+/* Let the active 3D card receive clicks through its transparent scene plane. */
+.is-cinema .direction-grid{pointer-events:none}

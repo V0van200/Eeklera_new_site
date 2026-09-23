@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@600;700&family=Playfair+Display:ital,wght@1,500&display=swap');
+
+:root {
+  color-scheme: dark;
+  --bg: #0b0b0c;
+  --surface: #141416;
+  --line: #2a2a2e;
+  --text: #f2efe9;
+  --muted: #9a978f;
+  --paper: #e9e6e0;
+  --acting: #ff5a6a;
+  --music: #9b6bff;
+  --modeling: #5fd0f0;
+  --blog: #4be0a0;
+  --accent: var(--text);
+  --font-body: 'Manrope', Arial, sans-serif;
+  --font-heading: 'Oswald', 'Arial Narrow', Impact, sans-serif;
+  --font-editorial: 'Playfair Display', Georgia, serif;
+  --gutter: clamp(20px, 4.7vw, 72px);
+  --space-section: clamp(56px, 7vw, 104px);
+  --ease: 180ms ease;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 400 1rem/1.65 var(--font-body); -webkit-font-smoothing: antialiased; }
+[data-section='acting'], [data-accent='acting'] { --accent: var(--acting); }
+[data-section='music'], [data-accent='music'] { --accent: var(--music); }
+[data-section='modeling'], [data-accent='modeling'] { --accent: var(--modeling); }
+[data-section='blog'], [data-accent='blog'] { --accent: var(--blog); }
+h1, h2, h3, p, figure { margin: 0; }
+h1, h2, h3 { line-height: 1.1; text-wrap: balance; overflow-wrap: anywhere; }
+h1, h2, .display { font-family: var(--font-heading); font-weight: 600; text-transform: uppercase; }
+h1 { font-size: clamp(3.5rem, 9vw, 8rem); }
+h2 { font-size: clamp(2.25rem, 4.5vw, 4rem); }
+h3 { font-size: clamp(1.15rem, 2vw, 1.6rem); }
+a { color: inherit; text-underline-offset: .25em; }
+button, input, textarea, select { font: inherit; }
+button { color: inherit; cursor: pointer; }
+img, video { display: block; max-width: 100%; height: auto; }
+svg { width: 1.25em; height: 1.25em; flex-shrink: 0; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 2px solid var(--text); outline-offset: 5px; }
+::selection { background: var(--paper); color: var(--bg); }
+.container { width: min(100%, 1440px); margin-inline: auto; padding-inline: var(--gutter); }
+.section { padding-block: var(--space-section); }
+.section + .section { border-top: 1px solid var(--line); }
+.grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; }
+.stack > * + * { margin-top: 24px; }
+.flow > * + * { margin-top: 12px; }
+.eyebrow { font-size: .75rem; font-weight: 500; text-transform: uppercase; letter-spacing: .2em; }
+.muted { color: var(--muted); }
+.editorial { font-family: var(--font-editorial); font-weight: 500; font-style: italic; }
+.text-link { display: inline-block; padding-block: 10px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.section--light { color-scheme: light; background: var(--paper); color: var(--bg); --text: #0b0b0c; --muted: #55534f; --line: #c5c1b9; }
+@media (max-width: 760px) {
+  .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  body:has(.mobile-contact) { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+

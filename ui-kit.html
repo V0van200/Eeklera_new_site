@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>EEKLERA — образцы компонентов</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="js/site.js" defer></script>
+</head>
+<body data-section="home">
+<a class="skip-link" href="#main">Перейти к содержанию</a>
+<header class="site-header" data-site-header>
+  <div class="container site-header__inner">
+    <a class="brand" href="#main">EEKLERA</a>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню"><span class="menu-toggle__lines" aria-hidden="true"></span></button>
+    <nav class="site-nav" id="site-nav" data-site-nav aria-label="Образцы компонентов">
+      <a href="#buttons">Кнопки</a><a href="#directions">Плитки</a><a href="#cards">Карточки</a><a href="#contacts">Связаться</a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+  <section class="section container stack">
+    <p class="eyebrow muted">EEKLERA / UI-кит / шаг 2</p>
+    <h1>Один бренд.<br>Четыре направления.</h1>
+    <p class="muted">Страница образцов: типографика, компоненты и адаптивная навигация. Это не главная сайта. Фото и содержание страниц добавляются на следующих шагах.</p>
+    <p class="editorial" style="font-size:clamp(2rem,5vw,4rem)">EEKLERA / Portfolio</p>
+  </section>
+  <section class="section container stack" id="buttons">
+    <p class="eyebrow muted">01 / Действия</p><h2>Кнопки и статусы</h2>
+    <div class="actions"><a class="button button--primary" href="#contacts">Связаться <span class="arrow" aria-hidden="true">→</span></a><a class="button" href="#cards">Посмотреть <span class="arrow" aria-hidden="true">→</span></a><a class="button button--accent" data-accent="modeling" href="#directions">Направления</a><a class="icon-button" href="#directions" aria-label="Перейти к плиткам"><span class="arrow" aria-hidden="true">→</span></a></div>
+    <p class="muted">Образцы бейджей — не статусы реальных проектов.</p>
+    <div class="actions"><span class="badge badge--released">Вышел</span><span class="badge badge--announced">Анонс</span><span class="badge badge--production">В производстве</span><span class="badge">Архив</span></div>
+  </section>
+  <section id="directions" aria-label="Плитки направлений — образцы">
+    <div class="direction-grid">
+      <a class="direction-card" data-accent="acting" href="#contacts"><span class="eyebrow">01</span><div><h2 class="direction-card__title">Актриса</h2><p class="direction-card__text">Место для описания</p><span class="icon-button" aria-hidden="true">→</span></div></a>
+      <a class="direction-card" data-accent="music" href="#contacts"><span class="eyebrow">02</span><div><h2 class="direction-card__title">Музыка</h2><p class="direction-card__text">Место для описания</p><span class="icon-button" aria-hidden="true">→</span></div></a>
+      <a class="direction-card" data-accent="modeling" href="#contacts"><span class="eyebrow">03</span><div><h2 class="direction-card__title">Модель</h2><p class="direction-card__text">Место для описания</p><span class="icon-button" aria-hidden="true">→</span></div></a>
+      <a class="direction-card" data-accent="blog" href="#contacts"><span class="eyebrow">04</span><div><h2 class="direction-card__title">Блог / Live</h2><p class="direction-card__text">Место для описания</p><span class="icon-button" aria-hidden="true">→</span></div></a>
+    </div>
+  </section>
+  <section class="section container stack" id="cards">
+    <p class="eyebrow muted">02 / Контент</p><h2>Медиа-карточки</h2>
+    <div class="media-grid">
+      <article class="media-card"><div class="media-card__body stack"><p class="eyebrow muted">Кино / образец</p><h3>Название проекта</h3><p class="muted">TODO: фото, роль, дата и подтверждённый статус.</p><a class="text-link" href="#contacts">К контактам →</a></div></article>
+      <article class="media-card"><div class="media-card__body stack"><p class="eyebrow muted">Музыка / образец</p><h3>Название релиза</h3><p class="muted">TODO: обложка, дата, аудио и ссылки на площадки.</p><a class="text-link" href="#contacts">К контактам →</a></div></article>
+      <article class="media-card"><div class="media-card__body stack"><p class="eyebrow muted">Модель / образец</p><h3>Название события</h3><p class="muted">TODO: фотография, описание и источник.</p><a class="text-link" href="#contacts">К контактам →</a></div></article>
+    </div>
+  </section>
+  <section class="section section--light"><div class="container stack"><p class="eyebrow muted">03 / Светлая секция</p><h2>Коротко обо мне</h2><p>Образец контраста и типографики. Биография появится при сборке главной.</p></div></section>
+  <section class="section container" id="contacts">
+    <div class="contact-panel"><div class="flow"><h2>Связаться</h2><p class="eyebrow muted">По вопросу</p></div><div class="contact-grid">
+      <a class="contact-card" data-accent="acting" href="#contact-example">Кастинг <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="contact-card" data-accent="music" href="#contact-example">Музыка <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="contact-card" data-accent="modeling" href="#contact-example">Модель <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="contact-card" data-accent="blog" href="#contact-example">Реклама <span class="arrow" aria-hidden="true">→</span></a>
+    </div></div>
+  </section>
+</main>
+<footer class="site-footer" id="contact-example"><div class="container"><div class="site-footer__grid">
+  <div class="flow"><a class="brand" href="#main">EEKLERA</a><p class="muted">Образец подвала</p></div>
+  <div class="flow"><p class="eyebrow muted">Компоненты</p><div class="site-footer__links"><a class="text-link" href="#buttons">Кнопки</a><a class="text-link" href="#cards">Карточки</a></div></div>
+  <div class="flow"><p class="eyebrow muted">Навигация</p><a class="text-link" href="#directions">Направления</a></div>
+  <div class="flow"><p class="eyebrow muted">Контакты</p><p>TODO: подключить подтверждённые контакты при сборке страниц.</p></div>
+</div><p class="site-footer__bottom">Локальная страница образцов · шаг 2</p></div></footer>
+<div class="mobile-contact"><a class="button button--primary" href="#contacts">Связаться <span class="arrow" aria-hidden="true">→</span></a></div>
+</body>
+</html>
